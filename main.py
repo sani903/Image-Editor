@@ -14,12 +14,12 @@ args = parser.parse_args()
 parent = cv.imread(sys.argv[1])
 if parent is None:
     if len(sys.argv) < 3:
-        img = np.ones([500 , 500], dtype='uint8')
+        img = np.ones([500 , 500, 3], dtype='uint8')
         img = img * 255
     else:
         a = sys.argv[3]
         b = sys.argv[4]
-        img = np.ones([int(a), int(b)], dtype='uint8')
+        img = np.ones([int(a), int(b), 3], dtype='uint8')
         img = img * 255
     cv.imshow('Image', img)
 else:
@@ -57,10 +57,13 @@ def main():
 def click_event(event, x, y, flags, params):
     if event == cv.EVENT_LBUTTONDOWN:
         if color == 1:
+            print("1")
             cv.circle(img, (x, y), 10, (0, 0, 255), thickness=-1)
         if color == 2:
+            print("2")
             cv.circle(img, (x, y), 10, (0, 255, 0), thickness=-1)
         if color == 3:
+            print("3")
             cv.circle(img, (x, y), 10, (255, 0, 0), thickness=-1)
         cv.imshow('Image', img)
 
