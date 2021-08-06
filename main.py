@@ -57,13 +57,10 @@ def main():
 def click_event(event, x, y, flags, params):
     if event == cv.EVENT_LBUTTONDOWN:
         if color == 1:
-            print("1")
             cv.circle(img, (x, y), 10, (0, 0, 255), thickness=-1)
         if color == 2:
-            print("2")
             cv.circle(img, (x, y), 10, (0, 255, 0), thickness=-1)
         if color == 3:
-            print("3")
             cv.circle(img, (x, y), 10, (255, 0, 0), thickness=-1)
         cv.imshow('Image', img)
 
